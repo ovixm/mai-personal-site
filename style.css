@@ -14,7 +14,7 @@ body{
 
 .taskbar {
   width: 100%;
-  height: 30px;
+  height: 5%;
   background: #c0c0c0;
   border-top: 2px solid #000;
   position: fixed;
@@ -27,9 +27,24 @@ body{
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.2);
 }
 
+.timedate {
+  width: auto;
+  height: auto;
+  display: flex;
+  position: fixed;
+  right: 5px;
+  margin-right: 20px;
+  font-size: 2vh;
+  background: #ffffaa;
+  box-shadow: 2px 2px 0 #000;
+}
+
 .applications {
+  width: 80px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
   position: fixed;
   top: 20px;
@@ -39,16 +54,11 @@ body{
 .application-icon {
   width: 50px;
   height: 50px;
-  margin-left: 10px;
-
   display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
   font-size: 14px;
   cursor: pointer;
   image-rendering: pixelated;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .application-icon:hover {
@@ -61,6 +71,7 @@ body{
 }
 
 .window {
+  visibility: visible;
   width: 50%;
   background: #fff;
   border: 3px solid #000;
