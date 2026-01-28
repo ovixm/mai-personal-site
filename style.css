@@ -91,6 +91,8 @@ body{
   box-shadow: 6px 6px #000;
   overflow: hidden;
   position: fixed;
+  top: 50px;
+  left: 25vw;
 }
 
 .title-bar {
