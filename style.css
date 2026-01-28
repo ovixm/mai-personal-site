@@ -39,16 +39,22 @@ body{
   box-shadow: 2px 2px 0 #000;
 }
 
-.applications {
+.applications-desktop {
   width: 80px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 10px;
   position: fixed;
   top: 20px;
   left: 20px;
+}
+
+.applications {
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .application-icon {
@@ -78,6 +84,7 @@ body{
   border-radius: 6px;
   box-shadow: 6px 6px #000;
   overflow: hidden;
+  position: fixed;
 }
 
 .title-bar {
@@ -90,6 +97,7 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 
 .title-bar .btn {
