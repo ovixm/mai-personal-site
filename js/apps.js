@@ -83,19 +83,17 @@ const apps = {
           &copy; 2025 Mai Trinh Vu.
         </footer>
       `;
-    }
+    },
+    cloneContent: true
   },
 
   music: {
     title: "Music",
-    render() { `
-      <div>UnderConstruction</div>
+    render() { 
+      return `
+          <div>UnderConstruction</div>
+      
       `;
-    },
-    onMount(win) {
-      const audio = win.querySelector("audio");
-      win.querySelector(".play").onclick = () => audio.play();
-      win.querySelector(".pause").onclick = () => audio.pause();
     }
   }
 
