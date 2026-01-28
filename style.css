@@ -39,6 +39,12 @@ body{
   box-shadow: 2px 2px 0 #000;
 }
 
+#desktop{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
 .applications-desktop {
   width: 80px;
   display: flex;
@@ -97,10 +103,14 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
+  cursor: grab;
 }
 
-.title-bar .btn {
+.title-bar:active {
+  cursor: grabbing;
+}
+
+.btn {
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -108,11 +118,11 @@ body{
   display: inline-block;
 }
 
-.btn.red { background: #ff5f56; }
+.btn.close { background: #ff5f56; }
 .btn.yellow { background: #ffbd2e }
 .btn.green { background: #27c93f }
 
-.btn.red:hover { background: #ff1f26; }
+.btn.close:hover { background: #ff1f26; }
 .btn.yellow:hover { background: #ff9d0e; }
 .btn.green:hover { background: #0f9937; }
 
