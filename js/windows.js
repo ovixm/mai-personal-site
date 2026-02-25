@@ -1,18 +1,37 @@
+
 let topZ = 1;
 
-function createWindow({ title, content }) {
+function createWindow({ title, content, cloneContent }) {
   const template = document.getElementById("window-template");
-  const win = template.content.cloneNode(true).firstElementChild;
+  const win = template.content.cloneNode(true).firstElementChild; 
 
   win.querySelector(".title").textContent = title;
-  win.querySelector(".window-content").innerHTML = content;
+  const container = win.querySelector(".window-content");
+
+  if(cloneContent && content instanceof Node) {
+    container.appendChild(content.cloneNode(true));
+  }
+  else
+  {
+    container.innerHTML = content;
+  }
+
   win.style.zIndex = topZ++;
 
   win.addEventListener("mousedown", () => {
     win.style.zIndex= topZ++;
   });
 
-  win.querySelector(".btn.close").onclick = () => win.remove();
+  win.querySelector(".btn.close").onclick = () => {
+    win.remove();
+
+    if(win.querySelector(".title").textContent === "Music") {
+      musicOpen = false;
+    }
+    else if(win.querySelector(".title").textContent === "~ my_personal_site.exe ~") {
+      internetOpen = false;
+    }
+  };
 
   makeDrag(win);
   document.getElementById("desktop").appendChild(win);
@@ -33,8 +52,6 @@ function makeDrag(win) {
 
     xCoord = e.clientX;
     yCoord = e.clientY;
-
-      console.log(taskbar.getBoundingClientRect().height);
 
     document.addEventListener('pointermove', mouseMove);
     document.addEventListener('pointerup', mouseUp);

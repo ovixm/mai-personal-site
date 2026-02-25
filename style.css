@@ -118,6 +118,7 @@ body{
   border-radius: 50%;
   border: 2px solid #000;
   display: inline-block;
+  cursor: pointer;
 }
 
 .btn.close { background: #ff5f56; }
@@ -164,16 +165,6 @@ input[type="radio"] {
   padding: 25px 30px;
   font-size: 14px;
   min-height: 300px;
-}
-
-.tab-content {
-  display: none;
-}
-
-/* inactive tabs */
-#tab1:checked ~ .content #content1,
-#tab2:checked ~ .content #content2 {
-  display:block;
 }
 
 /* active tabs */
@@ -262,6 +253,21 @@ input[type="radio"] {
   padding: 8px 12px;
 }
 
+.error {
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+}
+
+.music {
+  color: rgb(0, 141, 14);
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+}
 
 
 

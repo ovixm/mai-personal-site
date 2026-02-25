@@ -68,6 +68,22 @@ const apps = {
               </div>
 
               <div class="project-card">
+                <h3>
+                <a href="https://ovixm.github.io/05-charity-water-game-prototype/">
+                charity: water Game</a>
+                </h3>
+                <p>A resource management game to raise awareness for clean water access.</p>
+              </div>
+
+              <div class="project-card">
+                <h3>
+                <a href="https://ovixm.github.io/08-prj-loreal-chatbot/">
+                L'Oreal Chatbot</a>
+                </h3>
+                <p>A L'Oreal Chatbot that helps users with any questions related to beauty and L'Oreal products (OpenAI API Key has expired)</p>
+              </div>
+
+              <div class="project-card">
                 <h3>Portfolio Website</h3>
                 <p>Personal site to get to know me and my work!</p>
                 <a href="#">Live Demo</a>
@@ -91,8 +107,16 @@ const apps = {
     title: "Music",
     render() { 
       return `
-          <div>UnderConstruction</div>
-      
+          <div class="music">Under Construction: Currently waiting for Spotify API to be fixed.</div>
+      `;
+    }
+  },
+
+  error: {
+    title: "Error",
+    render() { 
+      return `
+          <div class="error">Error! Only one instance of this app can be opened at a time.</div>
       `;
     }
   }
