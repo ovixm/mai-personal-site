@@ -6,11 +6,13 @@ const apps = {
         <!-- inputs -->
         <input type="radio" name="tab" id="tab1" checked>
         <input type="radio" name="tab" id="tab2">
+        <input type="radio" name="tab" id="tab3">
 
         <!-- labels -->
         <div class="tabs">
           <label for="tab1">Home</label>
           <label for="tab2">Projects</label>
+          <label for="tab3">Art</label>
         </div>
 
         <div class="content">
@@ -91,6 +93,18 @@ const apps = {
             </div>
             
           </div>
+
+          <div class="tab-content" id="content3">
+
+              <h2> Art </h2></br>
+              <div class="projects">
+              <div class="project-card" id="image">
+                <h3>Haruki's Room</h3>
+                <img src="img/Haruki'sRoom.png" alt="3D Environment of Haruki's Room" style="width: 100%; height: auto; border: 2px solid #000;" title="3D Environment of Haruki's Room">
+                <p>Prototype of Haruki's Room in the game "shinwa.exe"</p>
+              </div>
+
+            </div>
 
         </div>
 

@@ -51,24 +51,54 @@ function openApp(id) {
 
 }
 
+harukiRoom = null;
+
 function renderInternetApp() {
 
   home = document.getElementById("content1");
   projects = document.getElementById("content2");
+  art = document.getElementById("content3");
 
-  if(home && projects) {
+  harukiRoom = document.getElementById("image");
+  harukiRoom.style.cursor = "pointer";
+  roomLarge = false;
+
+  if(home && projects && art) {
     home.style.display = "block";
     projects.style.display = "none";
+    art.style.display = "none";
 
     document.getElementById("tab1").addEventListener("change", () => {
       home.style.display = "block";
       projects.style.display = "none";
+      art.style.display = "none";
     });
 
     document.getElementById("tab2").addEventListener("change", () => {
       home.style.display = "none";
+      art.style.display = "none";
       projects.style.display = "block";
     });
+
+    document.getElementById("tab3").addEventListener("change", () => {
+      home.style.display = "none";
+      art.style.display = "block";
+      projects.style.display = "none";
+    });
+
+     harukiRoom.addEventListener("click", function() {
+        if(roomLarge) {
+          console.log("shrinking");
+          harukiRoom.style.width = "28%";
+          harukiRoom.style.height = "auto";
+          roomLarge = false;
+        } else {
+          harukiRoom.style.width = "200%";
+          harukiRoom.style.height = "auto";
+          roomLarge = true;
+        }
+    });
+
   }
 }
 
@@ -78,4 +108,4 @@ document.querySelectorAll(".application-icon").forEach(icon => {
   icon.onclick = () => openApp(icon.dataset.app);
 });
 
-
+ 

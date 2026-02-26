@@ -169,7 +169,8 @@ input[type="radio"] {
 
 /* active tabs */
 #tab1:checked ~ .tabs label[for="tab1"],
-#tab2:checked ~ .tabs label[for="tab2"] {
+#tab2:checked ~ .tabs label[for="tab2"],
+#tab3:checked ~ .tabs label[for="tab3"] {
   background: #fff;
   color: #000;
   border-bottom: 2px solid #fff;
