@@ -22,7 +22,7 @@ function openApp(id) {
 
   if(id === "internet" && internetOpen) {
     errorAudio.play();
-    openApp("error");
+    openError("instanceError");
     return;
   }
   else if(id === "internet") {
@@ -31,7 +31,7 @@ function openApp(id) {
   
   if(id === "music" && musicOpen) {
     errorAudio.play();
-    openApp("error");
+    openError("instanceError");
     return;
   }
   else if(id === "music") {
@@ -49,6 +49,15 @@ function openApp(id) {
     renderInternetApp();
   }
 
+}
+
+function openError(id) {
+  const errorList = errors[id];
+  const errorWin = createErrorWindow({
+    title: errorList.title,
+    content: errorList.render(),
+    cloneContent: true
+  });
 }
 
 harukiRoom = null;

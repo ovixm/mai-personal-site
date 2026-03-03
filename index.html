@@ -35,11 +35,33 @@
     </div>
    </template>
 
+   <!-- Template Error Window -->
+    <template id="error-template">
+    <div class="window error-window">
+      <div class="title-bar error-title">
+        <span class="title"></span>
+        <div id="buttons">
+          <span class="btn close">X</span>
+        </div>
+      </div>
+
+      <div class="error-content">
+        <div class="error-text"></div>
+        <div id="buttons">
+            <span class="btn okay">Ok</span>
+        </div>
+      </div>
+
+
+    </div>
+    </template>
+
   <div class="taskbar">
     <div class="timedate" id="timedate">hello</div>
   </div>
 
   <script src="js/windows.js"></script>
+  <script src="js/errors.js"></script>
   <script src="js/apps.js"></script>
   <script src="js/main.js"></script>
 

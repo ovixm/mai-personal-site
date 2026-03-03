@@ -39,6 +39,55 @@ function createWindow({ title, content, cloneContent }) {
   return win;
 }
 
+function createErrorWindow({ title, content, cloneContent }) {
+  const template = document.getElementById("error-template");
+  const errorWin = template.content.cloneNode(true).firstElementChild; 
+
+  errorWin.querySelector(".title").textContent = title;
+  const errorContainer = errorWin.querySelector(".error-text");
+
+  if(cloneContent && content instanceof Node) {
+    errorContainer.appendChild(content.cloneNode(true));
+  }
+  else
+  {
+    errorContainer.innerHTML = content;
+  }
+
+  errorWin.style.zIndex = topZ++;
+
+  errorWin.addEventListener("mousedown", () => {
+    errorWin.style.zIndex= topZ++;
+  });
+
+  errorWin.querySelector(".btn.close").onclick = () => {
+    errorWin.remove();
+
+    if(errorWin.querySelector(".title").textContent === "Music") {
+      musicOpen = false;
+    }
+    else if(errorWin.querySelector(".title").textContent === "~ my_personal_site.exe ~") {
+      internetOpen = false;
+    }
+  };
+
+  errorWin.querySelector(".btn.okay").onclick = () => {
+    errorWin.remove();
+
+    if(errorWin.querySelector(".title").textContent === "Music") {
+      musicOpen = false;
+    }
+    else if(errorWin.querySelector(".title").textContent === "~ my_personal_site.exe ~") {
+      internetOpen = false;
+    }
+  };
+
+  makeDrag(errorWin);
+  document.getElementById("desktop").appendChild(errorWin);
+
+  return errorWin;
+}
+
 function makeDrag(win) {
   let nextX = 0, nextY = 0, xCoord = 0, yCoord = 0;
 
