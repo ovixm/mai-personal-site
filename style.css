@@ -271,7 +271,7 @@ input[type="radio"] {
 
 .content {
   padding: 25px 30px;
-  font-size: 22px;
+  font-size: 18px;
   min-height: 300px;
 }
 
@@ -377,5 +377,6 @@ input[type="radio"] {
   text-align: center;
   padding: 20px;
 }
+
 
 
